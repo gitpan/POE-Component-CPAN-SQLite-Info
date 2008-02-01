@@ -1,5 +1,8 @@
 Revision history for Perl extension POE::Component::CPAN::SQLite::Info.
 
+0.02  Mon Jan 31 21:52:00 2008
+	- oops, forgot to add tests to Manifest
+
 0.01  Mon Jan 28 22:50:24 2008
 	- original version; created by h2xs 1.23 with options
 		-A -X -c --skip-exporter -v 0.01 -n POE::Component::CPAN::SQLite::Info
