@@ -4,12 +4,11 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 use LWP::UserAgent;
 use File::Spec;
-use IO::Null;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
 use Carp;
 
