@@ -1,0 +1,8 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/01-initialization.t
+t/02-method-same-session.t
+lib/POE/Component/CPAN/SQLite/Info.pm
+META.yml                                 Module meta-data (added by MakeMaker)
