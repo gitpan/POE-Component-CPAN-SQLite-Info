@@ -66,19 +66,19 @@ sub freshened {
                 exists $input->{files},
                 '{files} key must exist',
             );
-            is(
+            like(
                 $input->{files}{packages},
-                'cpan_sqlite_info/modules/02packages.details.txt.gz',
+                qr|cpan_sqlite_info[\\/]modules[\\/]\Q02packages.details.txt.gz|i,
                 '$input->{files}{packages} default',
             );
-            is(
+            like(
                 $input->{files}{authors},
-                'cpan_sqlite_info/authors/01mailrc.txt.gz',
+                qr|cpan_sqlite_info[\\/]authors[\\/]\Q01mailrc.txt.gz|i,
                 '$input->{files}{authors} default',
             );
-            is(
+            like(
                 $input->{files}{modlist},
-                'cpan_sqlite_info/modules/03modlist.data.gz',
+                qr|cpan_sqlite_info[\\/]modules[\\/]\Q03modlist.data.gz|i,
                 '$input->{files}{modlist} default',
             );
             

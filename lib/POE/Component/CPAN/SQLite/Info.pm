@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 use LWP::UserAgent;
@@ -20,7 +20,7 @@ sub spawn {
 
     eval { use CPAN::SQLite::Info; };
 
-    croak "Failed to load WebService::Validator::HTML::W3C ($@)"
+    croak "Failed to load CPAN::SQLite::Info ($@)"
         if $@;
 
     my %params = @_;
@@ -518,7 +518,7 @@ When set to a true value turns on output of debug messages.
 
 These are the object-oriented methods of the component.
 
-=head1 freshen
+=head2 freshen
 
     $poco->freshen( { event => 'now_files_are_fresh_event' } );
     
@@ -534,7 +534,7 @@ These are the object-oriented methods of the component.
 
 Takes one argument which is a hashref. See C<freshen> event for details.
 
-=head1 fetch_info
+=head2 fetch_info
 
     $poco->fetch_info( { event => 'event_for_results' } );
     

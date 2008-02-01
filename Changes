@@ -1,6 +1,12 @@
 Revision history for Perl extension POE::Component::CPAN::SQLite::Info.
 
-0.02  Mon Jan 31 21:52:00 2008
+0.04  Fri Feb  1 16:55:00 2008
+    - fix for broken tests on Windows
+    
+0.03  Thu Jan 31 21:52:00 2008
+    - IO::Null bug fix
+
+0.02  Thu Jan 31 21:52:00 2008
 	- oops, forgot to add tests to Manifest
 
 0.01  Mon Jan 28 22:50:24 2008
