@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                POE-Component-CPAN-SQLite-Info
-version:             0.05
+version:             0.06
 abstract:            non-blocking wrapper
 license:             ~
 author:              
