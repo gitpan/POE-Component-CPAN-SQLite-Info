@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 use LWP::UserAgent;
@@ -460,9 +460,9 @@ Using event based interface is also possible, of course.
 =head1 CONSTRUCTOR
 
     my $poco = POE::Component::CPAN::SQLite::Info->spawn;
-
+    
     POE::Component::CPAN::SQLite::Info->spawn( alias => 'info' );
-
+    
     POE::Component::CPAN::SQLite::Info->spawn(
         alias  => 'info2',
         path   => '/tmp',
@@ -625,9 +625,7 @@ to the current session.
     }
 
 B<Optional>. Any keys beginning with the C<_> (underscore) will be present
-in the output intact. If C<where> option (see below) is specified, any
-arguments will also be present in the result of "finished downloading"
-event.
+in the output intact. 
 
 =head2 fetch_info
 
