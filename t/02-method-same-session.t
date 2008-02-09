@@ -11,8 +11,6 @@ my $poco = POE::Component::CPAN::SQLite::Info->spawn( debug => 1 );
 isa_ok($poco, 'POE::Component::CPAN::SQLite::Info');
 can_ok($poco, qw(spawn shutdown session_id fetch_info freshen) );
 
-SKIP: {
-
 POE::Session->create(
     package_states => [
         main => [ qw( _start freshened fetched_info ) ],
@@ -22,6 +20,7 @@ POE::Session->create(
 $poe_kernel->run;
 
 sub _start {
+  SKIP: {
     unless ( -e 'cpan_network_tests' ) {
         $poco->shutdown;
         skip 'Skipping network tests', 21;
@@ -32,6 +31,7 @@ sub _start {
             _user => 'test',
         }
     );
+  } # SKIP
 }
 
 sub freshened {
@@ -156,6 +156,3 @@ sub fetched_info {
     );
     $poco->shutdown;
 }
-
-
-} # SKIP

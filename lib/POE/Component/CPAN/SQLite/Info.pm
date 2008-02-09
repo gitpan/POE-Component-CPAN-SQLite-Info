@@ -4,11 +4,11 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.06';
-
+our $VERSION = '0.07';
 
 use LWP::UserAgent;
 use File::Spec;
+use CPAN::SQLite::Info;
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
 use Carp;
 
@@ -17,11 +17,6 @@ sub spawn {
     
     croak "Even number of arguments must be passed to $package"
         if @_ & 1;
-
-    eval { use CPAN::SQLite::Info; };
-
-    croak "Failed to load CPAN::SQLite::Info ($@)"
-        if $@;
 
     my %params = @_;
     
@@ -1026,11 +1021,7 @@ in the output intact.
 
 =head1 SEE ALSO
 
-L<CPAN::SQLite::Info>, L<POE>
-
-=head1 BUGS
-
-None known. Please report, I rarely bite.
+L<CPAN::SQLite::Info>, L<POE>, L<LWP::UserAgent>
 
 =head1 PREREQUISITES
 
@@ -1043,20 +1034,54 @@ This module requires the following modules/versions
     POE::Wheel::Run          => 1.2179,
     POE::Filter::Reference   => 1.2187,
     POE::Filter::Line        => 1.1920,
-    LWP::UserAgent           => 2.036,
     CPAN::SQLite::Info       => 0.18
 
 =head1 AUTHOR
 
-Zoffix Znet, E<lt>zoffix@cpan.orgE<gt>
+Zoffix Znet, C<< <zoffix at cpan.org> >>
+( L<http://zoffix.com>, L<http://haslayout.net> )
 
-=head1 COPYRIGHT AND LICENSE
+=head1 BUGS
 
-Copyright (C) 2008 by Zoffix Znet
+Please report any bugs or feature requests to C<bug-poe-component-cpan-sqlite-info at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=POE-Component-CPAN-SQLite-Info>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
-at your option, any later version of Perl 5 you may have available.
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc POE::Component::CPAN::SQLite::Info
+
+You can also look for information at:
+
+=over 4
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=POE-Component-CPAN-SQLite-Info>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/POE-Component-CPAN-SQLite-Info>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/POE-Component-CPAN-SQLite-Info>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/POE-Component-CPAN-SQLite-Info>
+
+=back
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2008 Zoffix Znet, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
 
 =cut
+
