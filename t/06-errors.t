@@ -47,12 +47,14 @@ sub freshened {
         }
     }
     else {
+        SKIP: {
         ok(
             !exists $input->{freshen_errors},
             "we got 'fetch' in {freshen_error}, {freshen_errors}"
             . " should not exist in this case"
         );
         skip 'error is in dir creation, skipping {freshen_errors}', 3;
+        }
     }
     $poe_kernel->post( info => 'shutdown' );
 }

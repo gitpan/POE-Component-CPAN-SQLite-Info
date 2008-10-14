@@ -2,21 +2,21 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
+          'PL_FILES' => {},
+          'INSTALLDIRS' => 'site',
           'NAME' => 'POE::Component::CPAN::SQLite::Info',
+          'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/POE/Component/CPAN/SQLite/Info.pm',
           'PREREQ_PM' => {
+                           'POE::Wheel::Run' => '1.2179',
+                           'POE::Filter::Reference' => '1.2187',
+                           'File::Spec' => '3.2501',
+                           'POE::Filter::Line' => '1.192',
                            'CPAN::SQLite::Info' => '0.18',
                            'Carp' => '1.04',
-                           'File::Spec' => '3.2501',
+                           'Test::More' => 0,
                            'LWP::UserAgent' => '2.036',
-                           'POE' => '0.9999',
-                           'POE::Filter::Line' => '1.192',
-                           'POE::Filter::Reference' => '1.2187',
-                           'POE::Wheel::Run' => '1.2179',
-                           'Test::More' => '0'
-                         },
-          'INSTALLDIRS' => 'site',
-          'EXE_FILES' => [],
-          'PL_FILES' => {}
+                           'POE' => '0.9999'
+                         }
         )
 ;

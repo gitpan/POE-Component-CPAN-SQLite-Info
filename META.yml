@@ -1,6 +1,6 @@
 ---
 name: POE-Component-CPAN-SQLite-Info
-version: 0.07
+version: 0.08
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: |-
@@ -23,7 +23,7 @@ build_requires:
 provides:
   POE::Component::CPAN::SQLite::Info:
     file: lib/POE/Component/CPAN/SQLite/Info.pm
-    version: 0.07
+    version: 0.08
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

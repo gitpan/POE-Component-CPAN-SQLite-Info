@@ -1,5 +1,8 @@
 Revision history for POE-Component-CPAN-SQLite-Info
 
-0.01    Date/time
+0.08    October 13, 2008
+        Fixed broken test suit
+
+0.01    Dunno, 2008
         First version, released on an unsuspecting world.
 
