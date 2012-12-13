@@ -1,14 +1,22 @@
 ---
-name: POE-Component-CPAN-SQLite-Info
-version: 0.08
+abstract: 'non-blocking wrapper'
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
-abstract: |-
-  non-blocking wrapper
-  around L<CPAN::SQLite::Info> with file fetching abilities.
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.40
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.112150'
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: POE-Component-CPAN-SQLite-Info
+provides:
+  POE::Component::CPAN::SQLite::Info:
+    file: lib/POE/Component/CPAN/SQLite/Info.pm
+    version: 0.09
 requires:
   CPAN::SQLite::Info: 0.18
   Carp: 1.04
@@ -18,13 +26,6 @@ requires:
   POE::Filter::Line: 1.192
   POE::Filter::Reference: 1.2187
   POE::Wheel::Run: 1.2179
-build_requires:
-  Test::More: 0
-provides:
-  POE::Component::CPAN::SQLite::Info:
-    file: lib/POE/Component/CPAN/SQLite/Info.pm
-    version: 0.08
-generated_by: Module::Build version 0.2808
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.09

@@ -66,12 +66,12 @@ sub info {
     my ( $kernel, $results ) = @_[ KERNEL, ARG0 ];
     
     # $results got plenty of juicy data. Let's pick something and dump it
-                use Data::Dumper;
-                my $r = $_[ARG0];
-                delete @$r{qw(mods dists auths)};
-        print Dumper( $r);
+#                 use Data::Dumper;
+#                 my $r = $_[ARG0];
+# #                 delete @$r{qw(mods dists auths)};
+#         print Dumper( $r);
     use Data::Dumper;
-#     print Dumper ( $results->{mods}{'WWW::Search::Mininova'} );
+    print Dumper ( $results->{mods}{'WWW::Search::Mininova'} );
     
     # shut the PoCo down
     $poco->shutdown;

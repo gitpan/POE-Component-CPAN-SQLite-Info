@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use LWP::UserAgent;
 use File::Spec;
@@ -265,7 +265,10 @@ sub _wheel {
     my $raw;
     my $size = 4096;
     my $filter = POE::Filter::Reference->new;
-
+#     open my $fh, ">", "foo.txt";
+#     use Data::Dumper;
+#     print $fh Dumper $filter;
+#     die;
     while ( sysread STDIN, $raw, $size ) {
         my $requests = $filter->get( [ $raw ] );
         foreach my $req_ref ( @$requests ) {
@@ -280,7 +283,7 @@ sub _wheel {
             }
 
             my $response = $filter->put( [ $req_ref ] );
-            print STDOUT @$response;
+#             print STDOUT @$response;
         }
     }
 }
