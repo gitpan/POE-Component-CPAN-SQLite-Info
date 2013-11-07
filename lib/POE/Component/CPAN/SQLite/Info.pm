@@ -4,12 +4,12 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use LWP::UserAgent;
 use File::Spec;
 use CPAN::SQLite::Info;
-use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
+use POE (qw( Wheel::Run  Filter::Reference  Filter::Line));
 use Carp;
 
 sub spawn {
@@ -378,7 +378,8 @@ sub _fetch_data_files {
 1;
 
 __END__
-# Below is stub documentation for your module. You'd better edit it!
+
+=encoding utf8
 
 =head1 NAME
 
