@@ -1,5 +1,5 @@
 {
-   "abstract" : "non-blocking wrapper",
+   "abstract" : "non-blocking wrapper around L<CPAN::SQLite::Info> with file fetching abilities.",
    "author" : [
       "Zoffix Znet <zoffix@cpan.org>"
    ],
@@ -41,7 +41,7 @@
    "provides" : {
       "POE::Component::CPAN::SQLite::Info" : {
          "file" : "lib/POE/Component/CPAN/SQLite/Info.pm",
-         "version" : "0.10"
+         "version" : "0.11"
       }
    },
    "release_status" : "stable",
@@ -50,5 +50,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.10"
+   "version" : "0.11"
 }

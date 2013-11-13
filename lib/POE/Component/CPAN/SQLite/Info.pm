@@ -1,10 +1,9 @@
 package POE::Component::CPAN::SQLite::Info;
 
-use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use LWP::UserAgent;
 use File::Spec;
@@ -265,10 +264,7 @@ sub _wheel {
     my $raw;
     my $size = 4096;
     my $filter = POE::Filter::Reference->new;
-#     open my $fh, ">", "foo.txt";
-#     use Data::Dumper;
-#     print $fh Dumper $filter;
-#     die;
+
     while ( sysread STDIN, $raw, $size ) {
         my $requests = $filter->get( [ $raw ] );
         foreach my $req_ref ( @$requests ) {
@@ -283,14 +279,14 @@ sub _wheel {
             }
 
             my $response = $filter->put( [ $req_ref ] );
-#             print STDOUT @$response;
+            print STDOUT @$response;
         }
     }
 }
 
 sub _populate_info {
     my $req_ref = shift;
-    
+
     my $info = CPAN::SQLite::Info->new( CPAN => $req_ref->{path} );
     
     # stupid ->fetch_info prints crap to STDOUT effectively
@@ -383,8 +379,7 @@ __END__
 
 =head1 NAME
 
-POE::Component::CPAN::SQLite::Info - non-blocking wrapper
-around L<CPAN::SQLite::Info> with file fetching abilities.
+POE::Component::CPAN::SQLite::Info - non-blocking wrapper around L<CPAN::SQLite::Info> with file fetching abilities.
 
 =head1 SYNOPSIS
 

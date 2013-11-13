@@ -3,13 +3,18 @@
 use strict;
 use warnings;
 
-use lib '../lib';
- 
+use lib qw(../lib  lib);
 use POE qw(Component::CPAN::SQLite::Info);
+
+die "Usage: $0 MODULE_TO_LOOKUP\n"
+    unless @ARGV;
+
+my $Module_Name = shift;
 
 my $poco = POE::Component::CPAN::SQLite::Info->spawn;
 
 POE::Session->create(
+    options => { debug => 1, },
     package_states => [
         main => [
             qw(
@@ -32,9 +37,6 @@ sub _start {
 
 sub fetched {
     my ( $kernel, $input ) = @_[ KERNEL, ARG0 ];
-    
-    # whoops. Something whent wrong. Print the error(s)
-    # and kill the component
 
     if ( $input->{freshen_error} ) {
         
@@ -64,14 +66,9 @@ sub fetched {
 
 sub info {
     my ( $kernel, $results ) = @_[ KERNEL, ARG0 ];
-    
-    # $results got plenty of juicy data. Let's pick something and dump it
-#                 use Data::Dumper;
-#                 my $r = $_[ARG0];
-# #                 delete @$r{qw(mods dists auths)};
-#         print Dumper( $r);
+
     use Data::Dumper;
-    print Dumper ( $results->{mods}{'WWW::Search::Mininova'} );
+    print Dumper ( $results->{mods}{$Module_Name} );
     
     # shut the PoCo down
     $poco->shutdown;

@@ -1,5 +1,5 @@
 ---
-abstract: 'non-blocking wrapper'
+abstract: 'non-blocking wrapper around L<CPAN::SQLite::Info> with file fetching abilities.'
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 build_requires:
@@ -16,7 +16,7 @@ name: POE-Component-CPAN-SQLite-Info
 provides:
   POE::Component::CPAN::SQLite::Info:
     file: lib/POE/Component/CPAN/SQLite/Info.pm
-    version: 0.10
+    version: 0.11
 requires:
   CPAN::SQLite::Info: 0
   Carp: 0
@@ -29,4 +29,4 @@ requires:
   perl: 5.008008
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.10
+version: 0.11

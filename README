@@ -1,5 +1,8 @@
 POE-Component-CPAN-SQLite-Info
 
+Non-blocking wrapper around CPAN::SQLite::Info with file
+fetching abilities.
+
 INSTALLATION
 
 To install this module, run the following commands:
